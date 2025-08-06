@@ -1,4 +1,4 @@
-import streamlit as st
+tureimport streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -65,7 +65,5 @@ st.pyplot(fig)
 # Feature Importance
 st.subheader("🔍 Feature Importances")
 importances = model_total.feature_importances_
-importance_df = pd.DataFrame({"Feature": 'Temperature', 'Humidity:', 'Rainfall',
-    'Soil Moisture',
-    'Evapotranspiration', "Importance": importances}).sort_values(by="Importance", ascending=False)
+importance_df = pd.DataFrame({"Feature": "features", "Importance": importances}).sort_values(by="Importance", ascending=False)
 st.bar_chart(importance_df.set_index("Feature"))
