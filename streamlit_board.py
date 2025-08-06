@@ -26,7 +26,6 @@ data = data.dropna()
 
 # Features and Targets
 features = [
-   features = [
     "🌡️ Temperature (°C)",
     "💧 Humidity (%)",
     "🌧️ Rainfall (mm)",
