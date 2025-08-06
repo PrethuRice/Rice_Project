@@ -2,9 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.preprocessing import StandardScaler
-
 st.title("🌾 Rice Production Predictor Dashboard")
 
 # Dropdown to select rice type
