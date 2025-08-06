@@ -16,6 +16,14 @@ file_map = {
 }
 data = pd.read_csv(file_map[rice_type])
 
+# Drop rows with missing values in target columns
+df = df.dropna(subset=[
+    "Yied_Hectare_(M.Ton)",
+    "Total_Production(M.Ton)"
+])
+
+df = df.dropna()
+
 # Features and Targets
 features = [
     "Temperature", "Humidity", "Rainfall",
