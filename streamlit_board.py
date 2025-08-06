@@ -62,15 +62,18 @@ custom_slider_config = {
 }
 
 def user_inputs():
-    return [
-        st.sidebar.slider(
-            label=feature,
-            min_value=custom_slider_config[feature]["min"],
-            max_value=custom_slider_config[feature]["max"],
-            value=custom_slider_config[feature]["default"]
+    inputs = []
+    for feature in features:
+        label = feature_labels[feature]  # Get the pretty label with emoji
+        config = custom_slider_config[label]  # Use pretty label to access config
+        value = st.sidebar.slider(
+            label=label,
+            min_value=config["min"],
+            max_value=config["max"],
+            value=config["default"]
         )
-        for feature in features
-    ]
+        inputs.append(value)
+    return inputs
 
 # Get input and scale
 input_data = np.array(user_inputs()).reshape(1, -1)
