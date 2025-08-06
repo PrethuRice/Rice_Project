@@ -22,7 +22,7 @@ data = data.dropna(subset=[
     "Total_Production(M.Ton)"
 ])
 
-df = df.dropna()
+data = data.dropna()
 
 # Features and Targets
 features = [
