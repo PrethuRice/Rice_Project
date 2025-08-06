@@ -41,12 +41,34 @@ X_scaled = scaler.fit_transform(X)
 model_yield = RandomForestRegressor(random_state=0).fit(X_scaled, y_yield)
 model_total = RandomForestRegressor(random_state=0).fit(X_scaled, y_total)
 
-# Sliders for user input
+# Sliders for user input with custom ranges
 st.sidebar.header("Input Parameters")
+
+# 🔁 Define custom slider ranges for each feature
+custom_slider_config = {
+    "Temperature": {"min": 0.0, "max": 60.0, "default": 30.0},
+    "Humidity": {"min": 0.0, "max": 100.0, "default": 70.0},
+    "Rainfall": {"min": 0.0, "max": 2500.0, "default": 400.0},
+    "Soil Moisture": {"min": 0.0, "max": 1.0, "default": 0.5},
+    "Evapotranspiration": {"min": 0.0, "max": 300.0, "default": 5.0},
+    "Hectares": {"min": 0.0, "max": 100000.0, "default": 1000.0}  # Include this only if needed
+}
+
 def user_inputs():
-    return [st.sidebar.slider(f, float(X[f].min()), float(X[f].max()), float(X[f].mean())) for f in features]
+    return [
+        st.sidebar.slider(
+            label=feature,
+            min_value=custom_slider_config[feature]["min"],
+            max_value=custom_slider_config[feature]["max"],
+            value=custom_slider_config[feature]["default"]
+        )
+        for feature in features
+    ]
+
+# Get input and scale
 input_data = np.array(user_inputs()).reshape(1, -1)
 input_scaled = scaler.transform(input_data)
+
 
 # Prediction
 predicted_yield = model_yield.predict(input_scaled)[0]
