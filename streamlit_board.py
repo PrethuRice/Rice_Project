@@ -78,14 +78,14 @@ predicted_total = model_total.predict(input_scaled)[0]
 st.subheader(f"🌱 Predicted Yield: {predicted_yield:.2f} MT/hectare")
 st.subheader(f"📦 Predicted Total Production: {predicted_total:.2f} MT")
 
-# Bar chart of actual vs predicted total production
+## Bar chart of actual vs predicted total production
 st.subheader("📊 Actual vs Predicted Total Production")
 
-# Calculate mode of actual production
-actual_mode = y_total.median()[0]
+# Calculate median of actual production
+actual_median = y_total.median()
 
 fig, ax = plt.subplots()
-ax.bar(["Predicted", "Mode of Dataset"], [predicted_total, actual_mode], color=["orange", "green"])
+ax.bar(["Predicted", "Median of Dataset"], [predicted_total, actual_median], color=["orange", "green"])
 st.pyplot(fig)
 
 
