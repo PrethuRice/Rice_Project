@@ -14,10 +14,10 @@ file_map = {
     "aman": "aman.csv",
     "aush": "aush.csv"
 }
-data = df.pd.read_csv(file_map[rice_type])
+data = pd.read_csv(file_map[rice_type])
 
 # Drop rows with missing values in target columns
-df = df.dropna(subset=[
+data = data.dropna(subset=[
     "Yied_Hectare_(M.Ton)",
     "Total_Production(M.Ton)"
 ])
