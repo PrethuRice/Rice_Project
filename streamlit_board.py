@@ -46,12 +46,12 @@ st.sidebar.header("Provide environmental and agricultural data below")
 
 # 🔁 Define custom slider ranges for each feature
 custom_slider_config = {
-    "Temperature": {"min": 0.0, "max": 50.0, "default": 30.0},
-    "Humidity": {"min": 0.0, "max": 100.0, "default": 70.0},
-    "Rainfall": {"min": 0.0, "max": 1500.0, "default": 400.0},
-    "Soil Moisture": {"min": 0.0, "max": 1.0, "default": 0.5},
-    "Evapotranspiration": {"min": 0.0, "max": 20.0, "default": 5.0},
-    "Hectares": {"min": 0.0, "max": 100000.0, "default": 1000.0}  # Include this only if needed
+    "🌡️ Temperature (°C)": {"min": 0.0, "max": 50.0, "default": 30.0},
+    "💧 Humidity (%)": {"min": 0.0, "max": 100.0, "default": 70.0},
+    "🌧️ Rainfall (mm)": {"min": 0.0, "max": 1500.0, "default": 400.0},
+    "🌱 Soil Moisture (%)": {"min": 0.0, "max": 1.0, "default": 0.5},
+    "💨 Evapotranspiration (mm/day)": {"min": 0.0, "max": 20.0, "default": 5.0},
+    "🌾 Production Area (Hectares)": {"min": 0.0, "max": 100000.0, "default": 1000.0}  # Include this only if needed
 }
 
 def user_inputs():
