@@ -42,7 +42,7 @@ model_yield = RandomForestRegressor(random_state=0).fit(X_scaled, y_yield)
 model_total = RandomForestRegressor(random_state=0).fit(X_scaled, y_total)
 
 # Sliders for user input with custom ranges
-st.sidebar.header("Input Parameters")
+st.sidebar.header("Provide environmental and agricultural data below")
 
 # 🔁 Define custom slider ranges for each feature
 custom_slider_config = {
@@ -74,11 +74,14 @@ input_scaled = scaler.transform(input_data)
 predicted_yield = model_yield.predict(input_scaled)[0]
 predicted_total = model_total.predict(input_scaled)[0]
 
+# Descriptive lines before showing predictions
+st.markdown("🧠 **This model calculates the Yield Per Hectare and Total Production of rice using Machine Learning models.**")
+st.markdown("🔽 **According to your provided parameters, your:**")
+
 # Display predictions
 st.subheader(f"🌱 Predicted Yield: {predicted_yield:.2f} MT/hectare")
 st.subheader(f"📦 Predicted Total Production: {predicted_total:.2f} MT")
 
-st.sidebar.info("💡 Give your Environmental Data Below")
 
 
 # Feature Importance
