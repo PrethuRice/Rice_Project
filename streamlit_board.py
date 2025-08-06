@@ -82,7 +82,7 @@ st.subheader(f"📦 Predicted Total Production: {predicted_total:.2f} MT")
 st.subheader("📊 Actual vs Predicted Total Production")
 
 # Calculate mode of actual production
-actual_mode = y_total.mode()[0]
+actual_mode = y_total.median()[0]
 
 fig, ax = plt.subplots()
 ax.bar(["Predicted", "Mode of Dataset"], [predicted_total, actual_mode], color=["orange", "green"])
