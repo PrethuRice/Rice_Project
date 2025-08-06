@@ -64,6 +64,18 @@ st.pyplot(fig)
 
 # Feature Importance
 st.subheader("🔍 Feature Importances")
+
 importances = model_total.feature_importances_
-importance_df = pd.DataFrame({"Feature": features, "Importance": importances}).sort_values(by="Importance", ascending=False)
+
+# Build full importance DataFrame
+importance_df = pd.DataFrame({
+    "Feature": features,
+    "Importance": importances
+})
+
+# ✅ Exclude "Hectares" from the plot
+importance_df = importance_df[importance_df["Feature"] != "Hectares"]
+
+# Sort and plot
+importance_df = importance_df.sort_values(by="Importance", ascending=False)
 st.bar_chart(importance_df.set_index("Feature"))
