@@ -50,7 +50,7 @@ custom_slider_config = {
     "Humidity": {"min": 0.0, "max": 100.0, "default": 70.0},
     "Rainfall": {"min": 0.0, "max": 2500.0, "default": 400.0},
     "Soil Moisture": {"min": 0.0, "max": 1.0, "default": 0.5},
-    "Evapotranspiration": {"min": 0.0, "max": 300.0, "default": 5.0},
+    "Evapotranspiration": {"min": 0.0, "max": 30.0, "default": 5.0},
     "Hectares": {"min": 0.0, "max": 100000.0, "default": 1000.0}  # Include this only if needed
 }
 
