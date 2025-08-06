@@ -26,9 +26,13 @@ data = data.dropna()
 
 # Features and Targets
 features = [
-    "Temperature", "Humidity", "Rainfall",
-    "Soil Moisture",
-    "Evapotranspiration", "Hectares"
+   features = [
+    "🌡️ Temperature (°C)",
+    "💧 Humidity (%)",
+    "🌧️ Rainfall (mm)",
+    "🌱 Soil Moisture (%)",
+    "💨 Evapotranspiration (mm/day)",
+    "🌾 Production Area (Hectares)"
 ]
 X = data[features]
 y_yield = data["Yied_Hectare_(M.Ton)"]
