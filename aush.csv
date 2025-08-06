@@ -2473,9 +2473,10 @@ Soil Moisture,Temperature,Rainfall,Evapotranspiration,Solar_Radiation,Humidity,H
 ,,,,,,,,
 # Drop rows with missing values in target columns
 df = df.dropna(subset=[
-    "Production Yield (Hectare (M.Ton))",
-    "Production Total ((M.Ton))"
+    "Yied_Hectare_(M.Ton)",
+    "Total_Production(M.Ton)"
 ])
 
 df = df.dropna()
+
 
