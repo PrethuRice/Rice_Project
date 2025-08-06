@@ -80,9 +80,14 @@ st.subheader(f"📦 Predicted Total Production: {predicted_total:.2f} MT")
 
 # Bar chart of actual vs predicted total production
 st.subheader("📊 Actual vs Predicted Total Production")
+
+# Calculate mode of actual production
+actual_mode = y_total.mode()[0]
+
 fig, ax = plt.subplots()
-ax.bar(["Predicted", "Mean of Dataset"], [predicted_total, y_total.mean()], color=["orange", "green"])
+ax.bar(["Predicted", "Mode of Dataset"], [predicted_total, actual_mode], color=["orange", "green"])
 st.pyplot(fig)
+
 
 # Feature Importance
 st.subheader("🔍 Feature Importances")
