@@ -78,6 +78,8 @@ predicted_total = model_total.predict(input_scaled)[0]
 st.subheader(f"🌱 Predicted Yield: {predicted_yield:.2f} MT/hectare")
 st.subheader(f"📦 Predicted Total Production: {predicted_total:.2f} MT")
 
+st.sidebar.info("💡 Give your Environmental Data Below")
+
 
 # Feature Importance
 st.subheader("🔍 Feature Importances")
